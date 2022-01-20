@@ -11,7 +11,7 @@ const titleClickHandler = function(event){
     event.preventDefault();
     const clickedElement = this;  
     
-/* [DONE] remove class 'active' from all article links  */
+/*   remove class 'active' from all article links  */
 
   const activeLinks = document.querySelectorAll('.titles a.active');
 
@@ -19,10 +19,10 @@ const titleClickHandler = function(event){
     activeLink.classList.remove('active');
   }
 
-  /* [DONE] add class 'active' to the clicked link */
+  /*  add class 'active' to the clicked link */
   clickedElement.classList.add('active');
 
-  /* [DONE] remove class 'active' from all articles */
+  /*  remove class 'active' from all articles */
   const activeArticles = document.querySelectorAll('.posts .active');
   
   for(let activeArticle of activeArticles){
@@ -46,4 +46,33 @@ const titleClickHandler = function(event){
   
   for(let link of links){
     link.addEventListener('click', titleClickHandler);
+  }
+  
+  // second part of week 1
+
+{
+  const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
+
+function generateTitleLinks(){
+
+  /* remove contents of titleList */
+  const titleList = document.querySelector(optArticleSelector);
+  titleList.innerHTML = '';
+  /* for each article */
+
+    /* get the article id */
+
+    /* find the title element */
+
+    /* get the title from the title element */
+
+    /* create HTML of the link */
+
+    /* insert link into titleList */
+
+}
+
+generateTitleLinks();
   }
