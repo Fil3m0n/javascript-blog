@@ -9,44 +9,44 @@ const titleClickHandler = function(event) {
   event.preventDefault();
   const clickedElement = this;  
   
-/*   remove class 'active' from all article links  */
+  /*   remove class 'active' from all article links  */
 
-const activeLinks = document.querySelectorAll('.titles a.active');
+  const activeLinks = document.querySelectorAll('.titles a.active');
 
-for(let activeLink of activeLinks){
-  activeLink.classList.remove('active');
-}
+  for(let activeLink of activeLinks){
+    activeLink.classList.remove('active');
+  }
 
-/*  add class 'active' to the clicked link */
-clickedElement.classList.add('active');
+  /*  add class 'active' to the clicked link */
+  clickedElement.classList.add('active');
 
-/*  remove class 'active' from all articles */
-const activeArticles = document.querySelectorAll('.posts .active');
+  /*  remove class 'active' from all articles */
+  const activeArticles = document.querySelectorAll('.posts .active');
 
-for(let activeArticle of activeArticles){
-  activeArticle.classList.remove('active');
-}
+  for(let activeArticle of activeArticles){
+    activeArticle.classList.remove('active');
+  }
 
-/* get 'href' attribute from the clicked link */
-const articleSelector = clickedElement.getAttribute("href");
-console.log(articleSelector)
+  /* get 'href' attribute from the clicked link */
+  const articleSelector = clickedElement.getAttribute('href');
+  console.log(articleSelector);
 
-/* find the correct article using the selector (value of 'href' attribute) */
-const targetArticle = document.querySelector(articleSelector);
-console.log(targetArticle);
+  /* find the correct article using the selector (value of 'href' attribute) */
+  const targetArticle = document.querySelector(articleSelector);
+  console.log(targetArticle);
 
-/* add class 'active' to the correct article */
-targetArticle.classList.add('active');
+  /* add class 'active' to the correct article */
+  targetArticle.classList.add('active');
 
-}
+};
 
-  // second part of week 1
+// second part of week 1
 
- const optArticleSelector = '.post',
- optTitleSelector = '.post-title',
- optTitleListSelector = '.titles';
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
 
- function generateTitleLinks() {
+function generateTitleLinks() {
 
 
   /* remove contents of titleList */
@@ -59,8 +59,8 @@ targetArticle.classList.add('active');
   
   for (let article of articles) {
     
-     /* get the article id */
-    const articleId = article.getAttribute("id");
+    /* get the article id */
+    const articleId = article.getAttribute('id');
     console.log(articleId);
 
     /* find the title element */
@@ -77,14 +77,14 @@ targetArticle.classList.add('active');
     html = html + linkHTML;
     
   }
-    titleList.innerHTML = html;
+  titleList.innerHTML = html;
 }
 
 
- generateTitleLinks();
- const links = document.querySelectorAll('.titles a');
-   console.log(links)
-   for(let link of links){
-   link.addEventListener('click', titleClickHandler);
-  }
+generateTitleLinks();
+const links = document.querySelectorAll('.titles a');
+console.log(links);
+for(let link of links) {
+  link.addEventListener('click', titleClickHandler);
+}
   
