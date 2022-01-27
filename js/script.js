@@ -94,14 +94,17 @@ for(let link of links) {
 
 function generateTags(){
   /* find all articles */
-
+  const articles = document.querySelectorAll(optArticleSelector);
   /* START LOOP: for every article: */
-
+  for(let article of articles) {
   /* find tags wrapper */
-
+  const tagWrapper = article.querySelector(optArticleTagsSelector);
+  console.log(tagWrapper);
   /* make html variable with empty string */
-
+  let html = '';
   /* get tags from data-tags attribute */
+  const articleTags = article.getAttribute('data-tags');
+  console.log(articleTags);
 
   /* split tags into array */
 
@@ -116,6 +119,7 @@ function generateTags(){
   /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
+}
 }
 
 generateTags();
